@@ -16,8 +16,12 @@ class AuthController extends BaseController
 
         $user = User::where('email', $data['email'])->first();
 
-        if (!$user || !Hash::check($data['password'], $user->password)) {
-            return $this->errorResponse('Unauthorized', 401);
+        if (!$user) {
+            return $this->errorResponse('Account not found!', 404);
+        }
+
+        if (!Hash::check($data['password'], $user->password)) {
+            return $this->errorResponse('Wrong password', 403);
         }
 
         $token = $user->createToken('auth_token')->plainTextToken;
