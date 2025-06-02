@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('wallet_id')->constrained();
             $table->foreignId('category_id')->constrained();
-            $table->foreignId('category_children_id')->constrained();
+            $table->foreignId('category_children_id')->nullable()->constrained();
             $table->decimal('amount', total: 10, places: 2)->default(0);
             $table->string('note')->nullable();
             $table->date('date');

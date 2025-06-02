@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('title')
-    Create
+    Transaction Type
 @endsection
 
 @section('content')
+    <livewire:setting.transaction.transaction-type-table />
 @endsection

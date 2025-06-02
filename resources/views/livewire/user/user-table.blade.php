@@ -1,16 +1,21 @@
-<div class="card">
+<div class="card card-primary">
     <div class="card-header">
         <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                <input wire:model.live.debounce.500ms="search" type="text" class="form-control"
-                    placeholder="Search user" />
-            </div>
             <div>
-                <select wire:model.live='perPage' class="form-control mr-2" aria-label="Default select example">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                </select>
+                <h3 class="card-title">User</h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center mr-2">
+                    <input wire:model.live.debounce.500ms="search" type="text" class="form-control"
+                        placeholder="Search user" />
+                </div>
+                <div>
+                    <select wire:model.live='perPage' class="form-control mr-2" aria-label="Default select example">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>

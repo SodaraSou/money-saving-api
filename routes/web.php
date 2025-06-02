@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WalletController;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +14,11 @@ Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('hom
 // Route::get('/wallets/create', [WalletController::class, 'create'])->middleware('auth')->name('wallet.create');
 Route::get('/wallets/{wallet}', [WalletController::class, 'show'])->middleware('auth')->name('wallet.show');
 // Route::get('/wallets/{wallet}/edit', [WalletController::class, 'edit'])->middleware('auth')->name('wallet.edit');
+
+// Transaction
+Route::get('/transaction-type', [TransactionController::class, 'indexTransactionType'])->middleware('auth')->name('transaction-type.index');
+Route::get('/transaction-type/create', [TransactionController::class, 'createTransactionType'])->middleware('auth')->name('transaction-type.create');
+Route::get('/transaction-type/{transaction_type}/edit', [TransactionController::class, 'editTransactionType'])->middleware('auth')->name('transaction-type.edit');
 
 // User
 Route::get('/users', [UserController::class, 'index'])->middleware('auth')->name('user.index');

@@ -19,6 +19,13 @@ class WalletController extends BaseController
 
         $wallets = Wallet::where('user_id', Auth::user()->id)->get();
 
+        $totalBalance = $wallets->sum('balance');
+
+        $wallets = [
+            'wallets' => $wallets,
+            'total_balance' => $totalBalance
+        ];
+
         return $this->successResponse($wallets, "Wallets retrieved successfully!");
     }
 
@@ -48,7 +55,7 @@ class WalletController extends BaseController
     {
         Gate::authorize('view', $wallet);
 
-        $wallet->load(['user', 'transactions']);
+        $wallet->load(['transactions']);
 
         return $this->successResponse($wallet, "Wallet retrieved successfully!");
     }
