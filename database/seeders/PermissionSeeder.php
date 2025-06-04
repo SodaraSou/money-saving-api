@@ -25,5 +25,10 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'create_users']);
         Permission::create(['name' => 'update_users']);
         Permission::create(['name' => 'delete_users']);
+        // Transaction Permission
+        Permission::create(['name' => 'view_transaction']);
+        Permission::create(['name' => 'create_transaction']);
+        Permission::create(['name' => 'update_transaction']);
+        Permission::create(['name' => 'delete_transaction']);
     }
 }

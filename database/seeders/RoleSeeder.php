@@ -21,7 +21,11 @@ class RoleSeeder extends Seeder
             'view_wallet',
             'create_wallet',
             'update_wallet',
-            'delete_wallet'
+            'delete_wallet',
+            'view_transaction',
+            'create_transaction',
+            'update_transaction',
+            'delete_transaction',
         ]);
     }
 }
