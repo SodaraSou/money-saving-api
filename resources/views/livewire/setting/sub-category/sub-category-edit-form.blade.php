@@ -1,4 +1,4 @@
-<div class="card card-success">
+<div class="card card-warning">
     <div class="card-header">
         <h3 class="card-title">Edit Sub Category</h3>
     </div>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-success"><i class="fa fa-save mr-1"></i> Update</button>
+            <button type="submit" class="btn btn-warning"><i class="fa fa-save mr-1"></i> Update</button>
         </div>
     </form>
 </div>

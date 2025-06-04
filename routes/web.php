@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WalletController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
@@ -35,4 +35,7 @@ Route::get('/users', [UserController::class, 'index'])->middleware('auth')->name
 Route::get('/users/create', [UserController::class, 'create'])->middleware('auth')->name('user.create');
 Route::get('/users/{user}', [UserController::class, 'show'])->middleware('auth')->name('user.show');
 
-Auth::routes();
+// Auth
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
