@@ -26,7 +26,7 @@ class TransactionTypeEditForm extends Component
             $this->transaction_type->update([
                 'name' => $this->name
             ]);
-            return redirect()->route('transaction-type.index');
+            return redirect()->to('/transaction-type');
         } catch (\Exception $e) {
             $this->dispatch('update_fail');
         }

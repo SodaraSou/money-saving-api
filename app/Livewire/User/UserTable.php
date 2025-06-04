@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class UserTable extends Component
 {
-    public $perPage = 10;
+    public $per_page = 10;
     #[Url]
     public $search = '';
 
@@ -21,7 +21,7 @@ class UserTable extends Component
         }
 
         return view('livewire.user.user-table', [
-            'users' => $query->paginate($this->perPage),
+            'users' => $query->paginate($this->per_page),
         ]);
     }
 }

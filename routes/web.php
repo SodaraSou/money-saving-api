@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
@@ -19,6 +20,15 @@ Route::get('/wallets/{wallet}', [WalletController::class, 'show'])->middleware('
 Route::get('/transaction-type', [TransactionController::class, 'indexTransactionType'])->middleware('auth')->name('transaction-type.index');
 Route::get('/transaction-type/create', [TransactionController::class, 'createTransactionType'])->middleware('auth')->name('transaction-type.create');
 Route::get('/transaction-type/{transaction_type}/edit', [TransactionController::class, 'editTransactionType'])->middleware('auth')->name('transaction-type.edit');
+
+// Category
+Route::get('/category', [CategoryController::class, 'indexCategory'])->middleware('auth')->name('category.index');
+Route::get('/category/create', [CategoryController::class, 'createCategory'])->middleware('auth')->name('category.create');
+Route::get('/category/{category}/edit', [CategoryController::class, 'editCategory'])->middleware('auth')->name('category.edit');
+// Sub Category
+Route::get('/sub-category', [CategoryController::class, 'indexSubCategory'])->middleware('auth')->name('sub-category.index');
+Route::get('/sub-category/create', [CategoryController::class, 'createSubCategory'])->middleware('auth')->name('sub-category.create');
+Route::get('/sub-category/{sub_category}/edit', [CategoryController::class, 'editSubCategory'])->middleware('auth')->name('sub-category.edit');
 
 // User
 Route::get('/users', [UserController::class, 'index'])->middleware('auth')->name('user.index');

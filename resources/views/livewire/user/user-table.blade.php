@@ -10,7 +10,7 @@
                         placeholder="Search user" />
                 </div>
                 <div>
-                    <select wire:model.live='perPage' class="form-control mr-2" aria-label="Default select example">
+                    <select wire:model.live='per_page' class="form-control mr-2">
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="50">50</option>

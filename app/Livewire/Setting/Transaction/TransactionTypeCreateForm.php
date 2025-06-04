@@ -15,8 +15,9 @@ class TransactionTypeCreateForm extends Component
     {
         $this->validate();
         try {
-            TransactionType::create(['name' => $this->name]);
-            session()->flash('success', 'Transaction type created successfully.');
+            TransactionType::create([
+                'name' => $this->name
+            ]);
             return redirect()->route('transaction-type.index');
         } catch (\Exception $ex) {
             session()->flash('error', 'Something went wrong!');

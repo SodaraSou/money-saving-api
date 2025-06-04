@@ -21,7 +21,8 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <h1 class="h1 m-0"><b>Admin</b>LTE</h1>
+                <img src="{{ asset('logo.png') }}" alt="school-logo" style="width: 120px; height: 120px;" />
+                <h1 class="h1 m-0"><b>LuyTopia</b></h1>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">LOGIN TO CONTINUE</p>
