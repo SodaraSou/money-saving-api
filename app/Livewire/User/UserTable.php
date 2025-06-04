@@ -9,7 +9,7 @@ use Livewire\Component;
 class UserTable extends Component
 {
     public $per_page = 10;
-    #[Url]
+    #[Url()]
     public $search = '';
 
     public function render()
@@ -20,8 +20,10 @@ class UserTable extends Component
             $query->where('name', 'like', '%' . $this->search . '%');
         }
 
+        $user = $query->paginate($this->per_page);
+
         return view('livewire.user.user-table', [
-            'users' => $query->paginate($this->per_page),
+            'users' => $user
         ]);
     }
 }

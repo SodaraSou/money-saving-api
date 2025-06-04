@@ -37,13 +37,13 @@
                     </ul>
                 </div>
             </div>
-            {{-- <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
                 <select wire:model.live='per_page' class="form-control">
                     <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="50">50</option>
                 </select>
-            </div> --}}
+            </div>
         </div>
         @if ($filters['category_id'])
             <div class="my-2">Applied Filters:

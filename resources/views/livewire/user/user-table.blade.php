@@ -1,25 +1,25 @@
 <div class="card card-primary">
     <div class="card-header">
         <div class="d-flex justify-content-between align-items-center">
-            <div>
-                <h3 class="card-title">User</h3>
-            </div>
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center mr-2">
-                    <input wire:model.live.debounce.500ms="search" type="text" class="form-control"
-                        placeholder="Search user" />
-                </div>
-                <div>
-                    <select wire:model.live='per_page' class="form-control mr-2">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="50">50</option>
-                    </select>
-                </div>
-            </div>
+            <h3 class="card-title">User</h3>
+            {{-- <a href="{{ route('user.create') }}" class="btn btn-success"><i class="fa fa-plus mr-1"></i>
+                Create</a> --}}
         </div>
     </div>
     <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <input wire:model.live.debounce.500ms="search" type="text" class="form-control"
+                    placeholder="Search user" />
+            </div>
+            <div>
+                <select wire:model.live='per_page' class="form-control mr-2">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </div>
         <table class="table table-hover text-nowrap">
             <thead>
                 <tr>
@@ -39,7 +39,7 @@
                         <td>{{ $user->name }}</td>
                         <td>
                             <div class="d-flex justify-content-center align-items-center">
-                                <a href="{{ route('user.show', $user->id) }}" class="btn btn-sm btn-success mr-2">
+                                <a href="{{ route('user.show', $user->id) }}" class="btn btn-sm btn-primary mr-2">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </a>
                                 {{-- <button class="btn btn-sm btn-danger"
