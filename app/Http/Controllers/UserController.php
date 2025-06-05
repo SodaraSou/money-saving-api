@@ -13,7 +13,10 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user = $user->load(['wallets']);
+        $user = $user->load([
+            'wallets',
+            'transactions.category.transactionType'
+        ]);
 
         return view('user.user-show', [
             'user' => $user

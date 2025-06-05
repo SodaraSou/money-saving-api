@@ -10,6 +10,12 @@ class Permissions
     public const UPDATE_WALLET = 'update_wallet';
     public const DELETE_WALLET = 'delete_wallet';
 
+    // Transaction Permissions
+    public const VIEW_TRANSACTION = 'view_transaction';
+    public const CREATE_TRANSACTION = 'create_transaction';
+    public const UPDATE_TRANSACTION = 'update_transaction';
+    public const DELETE_TRANSACTION = 'delete_transaction';
+
     // User Permissions
     public const VIEW_USERS = 'view_users';
     public const CREATE_USERS = 'create_users';

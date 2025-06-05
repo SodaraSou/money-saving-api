@@ -54,9 +54,12 @@
                                             ID
                                         </th>
                                         <th>
-                                            Wallet Name
+                                            Wallet
                                         </th>
-                                        <th class="text-center">Action</th>
+                                        <th>
+                                            Balance
+                                        </th>
+                                        {{-- <th class="text-center">Action</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -64,22 +67,63 @@
                                         <tr wire:key='{{ $wallet->id }}'>
                                             <td>{{ $wallet->id }}</td>
                                             <td>{{ $wallet->name }}</td>
-                                            <td>
+                                            <td>{{ $wallet->balance }}</td>
+                                            {{-- <td>
                                                 <div class="d-flex justify-content-center align-items-center">
                                                     <a href="{{ route('wallet.show', $wallet->id) }}"
                                                         class="btn btn-sm btn-success mr-2">
                                                         <i class="fa fa-eye" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.tab-pane -->
-                        <div class="active tab-pane" id="activity">
-
+                        <div class="tab-pane" id="activity">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            ID
+                                        </th>
+                                        <th>
+                                            Wallet
+                                        </th>
+                                        <th>
+                                            Transaction Type
+                                        </th>
+                                        <th>
+                                            Category
+                                        </th>
+                                        <th>
+                                            Amount
+                                        </th>
+                                        {{-- <th class="text-center">Action</th> --}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($user->transactions as $transaction)
+                                        <tr wire:key='{{ $transaction->id }}'>
+                                            <td>{{ $transaction->id }}</td>
+                                            <td>{{ $transaction->wallet->name }}</td>
+                                            <td>{{ $transaction->category->transactionType->name }}</td>
+                                            <td>{{ $transaction->category->name }}</td>
+                                            <td>{{ $transaction->amount }}</td>
+                                            {{-- <td>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <a href="{{ route('wallet.show', $wallet->id) }}"
+                                                        class="btn btn-sm btn-success mr-2">
+                                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </td> --}}
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                         <!-- /.tab-pane -->
                     </div>

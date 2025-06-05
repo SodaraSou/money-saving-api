@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Constants\Permissions;
 use Illuminate\Foundation\Http\FormRequest;
 
 class TransactionRequest extends FormRequest
@@ -11,7 +12,8 @@ class TransactionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->user()->can(Permissions::CREATE_TRANSACTION)
+            || $this->user()->can(Permissions::UPDATE_TRANSACTION);
     }
 
     /**
@@ -22,7 +24,12 @@ class TransactionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'wallet_id' => ['required'],
+            'category_id' => ['nullable'],
+            'sub_category_id' => ['nullable'],
+            'amount' => ['numeric'],
+            'note' => ['nullable'],
+            'date' => ['date']
         ];
     }
 }

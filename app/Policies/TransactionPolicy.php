@@ -2,9 +2,9 @@
 
 namespace App\Policies;
 
+use App\Constants\Permissions;
 use App\Models\Transaction;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class TransactionPolicy
 {
@@ -13,7 +13,7 @@ class TransactionPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return $user->hasPermissionTo(Permissions::VIEW_TRANSACTION);
     }
 
     /**
@@ -21,7 +21,8 @@ class TransactionPolicy
      */
     public function view(User $user, Transaction $transaction): bool
     {
-        return false;
+        return $user->hasPermissionTo(Permissions::VIEW_TRANSACTION)
+            && $transaction->user_id == $user->id;
     }
 
     /**
@@ -29,7 +30,7 @@ class TransactionPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return $user->hasPermissionTo(Permissions::CREATE_TRANSACTION);
     }
 
     /**
@@ -37,7 +38,8 @@ class TransactionPolicy
      */
     public function update(User $user, Transaction $transaction): bool
     {
-        return false;
+        return $user->hasPermissionTo(Permissions::UPDATE_TRANSACTION)
+            && $transaction->user_id == $user->id;
     }
 
     /**
@@ -45,22 +47,7 @@ class TransactionPolicy
      */
     public function delete(User $user, Transaction $transaction): bool
     {
-        return false;
-    }
-
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, Transaction $transaction): bool
-    {
-        return false;
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, Transaction $transaction): bool
-    {
-        return false;
+        return $user->hasPermissionTo(Permissions::DELETE_TRANSACTION)
+            && $transaction->user_id == $user->id;
     }
 }
