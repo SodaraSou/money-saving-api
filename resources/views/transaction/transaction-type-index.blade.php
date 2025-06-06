@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <livewire:setting.transaction.transaction-type-table />
+    @livewire('setting.transaction.transaction-type-table')
 @endsection

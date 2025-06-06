@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <livewire:user.user-table />
+    @livewire('user.user-table')
 @endsection

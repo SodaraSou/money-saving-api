@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <livewire:setting.category.category-table />
+    @livewire('setting.category.category-table')
 @endsection
