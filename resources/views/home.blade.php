@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <livewire:home.overall-statistic />
+    @livewire('home.overall-statistic')
 @endsection
