@@ -23,14 +23,14 @@ class Permissions
     public const DELETE_USERS = 'delete_users';
 
     // Role Permissions
-    public const VIEW_ROLES = 'view_roles';
-    public const CREATE_ROLES = 'create_roles';
-    public const EDIT_ROLES = 'update_roles';
-    public const DELETE_ROLES = 'delete_roles';
+    public const VIEW_ROLES = 'view_role';
+    public const CREATE_ROLES = 'create_role';
+    public const EDIT_ROLES = 'update_role';
+    public const DELETE_ROLES = 'delete_role';
 
     // Permission Permissions
-    public const VIEW_PERMISSIONS = 'view_permissions';
-    public const CREATE_PERMISSIONS = 'create_permissions';
-    public const EDIT_PERMISSIONS = 'update_permissions';
-    public const DELETE_PERMISSIONS = 'delete_permissions';
+    public const VIEW_PERMISSIONS = 'view_permission';
+    public const CREATE_PERMISSIONS = 'create_permission';
+    public const EDIT_PERMISSIONS = 'update_permission';
+    public const DELETE_PERMISSIONS = 'delete_permission';
 }

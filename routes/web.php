@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WalletController;
@@ -34,6 +36,16 @@ Route::get('/sub-category/{sub_category}/edit', [CategoryController::class, 'edi
 Route::get('/users', [UserController::class, 'index'])->middleware('auth')->name('user.index');
 Route::get('/users/create', [UserController::class, 'create'])->middleware('auth')->name('user.create');
 Route::get('/users/{user}', [UserController::class, 'show'])->middleware('auth')->name('user.show');
+
+// Role
+Route::get('/role', [RoleController::class, 'index'])->middleware('auth')->name('role.index');
+Route::get('/role/create', [RoleController::class, 'create'])->middleware('auth')->name('role.create');
+Route::get('/role/{role}/edit', [RoleController::class, 'edit'])->middleware('auth')->name('role.edit');
+
+// Permission
+Route::get('/permission', [PermissionController::class, 'index'])->middleware('auth')->name('permission.index');
+Route::get('/permission/create', [PermissionController::class, 'create'])->middleware('auth')->name('permission.create');
+Route::get('/permission/{permission}/edit', [PermissionController::class, 'edit'])->middleware('auth')->name('permission.edit');
 
 // Auth
 Route::get('/login', [LoginController::class, 'create'])->name('login');
