@@ -11,7 +11,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <li class="nav-item">
+                <li class="nav-item" id="dashboard">
                     <a href="{{ route('home') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -19,7 +19,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="user">
                     <a href="{{ route('user.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
@@ -27,7 +27,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="security">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-lock"></i>
                         <p>
@@ -36,21 +36,21 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
+                        <li class="nav-item" id="role">
                             <a href="{{ route('role.index') }}" class="nav-link">
-                                <i class="fas fa-angle-right nav-icon"></i>
+                                <i class="fas fa-angle-double-right nav-icon"></i>
                                 <p>Role</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="permission">
                             <a href="{{ route('permission.index') }}" class="nav-link">
-                                <i class="fas fa-angle-right nav-icon"></i>
+                                <i class="fas fa-angle-double-right nav-icon"></i>
                                 <p>Permission</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="setting">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-cog"></i>
                         <p>
@@ -59,21 +59,21 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
+                        <li class="nav-item" id="transaction-type">
                             <a href="{{ route('transaction-type.index') }}" class="nav-link">
-                                <i class="fas fa-angle-right nav-icon"></i>
+                                <i class="fas fa-angle-double-right nav-icon"></i>
                                 <p>Transaction Type</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="category">
                             <a href="{{ route('category.index') }}" class="nav-link">
-                                <i class="fas fa-angle-right nav-icon"></i>
+                                <i class="fas fa-angle-double-right nav-icon"></i>
                                 <p>Category</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="sub-category">
                             <a href="{{ route('sub-category.index') }}" class="nav-link">
-                                <i class="fas fa-angle-right nav-icon"></i>
+                                <i class="fas fa-angle-double-right nav-icon"></i>
                                 <p>Sub Category</p>
                             </a>
                         </li>
