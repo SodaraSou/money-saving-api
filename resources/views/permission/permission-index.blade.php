@@ -14,7 +14,7 @@
             $("#sidebar li a").removeClass("active");
             $("#security>a").addClass("active");
             $("#security").addClass("menu-open");
-            $("#permission").addClass("my-active");
+            $("#permission>a").addClass("active");
         });
     </script>
 @endsection

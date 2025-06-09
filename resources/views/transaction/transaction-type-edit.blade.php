@@ -14,7 +14,7 @@
             $("#sidebar li a").removeClass("active");
             $("#setting>a").addClass("active");
             $("#setting").addClass("menu-open");
-            $("#transaction-type").addClass("my-active");
+            $("#transaction-type>a").addClass("active");
         });
     </script>
 @endsection

@@ -43,19 +43,6 @@
     <!-- SweetAlert2 -->
     <script src="{{ asset('vendor/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- JS Script -->
-    <script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "center",
-            iconColor: "white",
-            customClass: {
-                popup: "colored-toast",
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-        });
-    </script>
     @yield('js')
 </body>
 

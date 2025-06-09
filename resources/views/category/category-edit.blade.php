@@ -14,7 +14,7 @@
             $("#sidebar li a").removeClass("active");
             $("#setting>a").addClass("active");
             $("#setting").addClass("menu-open");
-            $("#category").addClass("my-active");
+            $("#category>a").addClass("active");
         });
     </script>
 @endsection
